@@ -220,10 +220,13 @@
         });
     });
 
-    // Function to update the Leaflet map with new coordinates
+// Define map variable outside the function
+    let map;
+
+// Function to update the Leaflet map with new coordinates
     function updateMap(latitude, longitude) {
       if (!map) {
-        // Initialize the map if it's not already initialized
+    // Initialize the map if it's not already initialized
         map = L.map('map').setView([latitude, longitude], 8);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -231,7 +234,7 @@
           attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
       } else {
-        // If map is already initialized, update its view and add marker
+    // If map is already initialized, update its view and add marker
         map.setView([latitude, longitude], 8);
         L.marker([latitude, longitude]).addTo(map);
       }
