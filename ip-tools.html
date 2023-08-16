@@ -4,7 +4,7 @@
   <title>EXOTOOL - IP Tools</title>
   <link rel="icon" href="images/EXOTOOL logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
   <style>
     body {
       background-color: black;
@@ -169,6 +169,7 @@
     <div id="result-box">
       <button id="copy-btn">Copy</button>
       <div id="ip-result"></div>
+      <div id="map"></div>
     </div>
   </div>
 
@@ -244,12 +245,12 @@
 
     function initMap(latitude, longitude) {
       const map = L.map('map').setView([latitude, longitude], 8);
-      
+
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: 'Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
-      
+
       L.marker([latitude, longitude]).addTo(map);
     }
 
