@@ -179,7 +179,7 @@
     const copyBtn = document.getElementById('copy-btn');
     const showIpBtn = document.getElementById('show-ip-btn');
     const ipInput = document.getElementById('ip-input');
-    let map; 
+    let map;
 
     lookupBtn.addEventListener('click', () => {
       const ipInputValue = ipInput.value;
@@ -210,8 +210,6 @@
           console.error(error);
         });
     });
-
-    let map;
 
     function updateMap(latitude, longitude) {
       if (!map) {
